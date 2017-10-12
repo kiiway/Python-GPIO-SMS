@@ -12,6 +12,11 @@ To run the script you need run this command:
 ```bash
 sudo python /your/folder/location/Python-GPIO-SMS/main.py
 ```
+
+> **Note:**
+>Now you can send SMS to the phone number of the dongle like this :
+> **gpio:[Chanel];[State(1|0)]**
+
 # Install gammu from sources
 ---
 
