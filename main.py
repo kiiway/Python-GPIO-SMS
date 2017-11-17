@@ -26,7 +26,10 @@ def sms_command(sms_content):
     gpio_regex = re.match(r"gpio:([0-9]{1,2});([0-9]{1})", sms_content, re.M|re.I)
     if(gpio_regex):
         gpio.setup(gpio_regex.group(1), gpio.OUT)
-        (gpio_regex.group(2)) ? gpio.output(gpio_regex.group(1), gpio.HIGH) : gpio.output(gpio_regex.group(1), gpio.LOW)
+        if gpio_regex.group(2):
+            gpio.output(gpio_regex.group(1), gpio.HIGH)
+        else:
+            gpio.output(gpio_regex.group(1), gpio.LOW)
     
 
 def main():
